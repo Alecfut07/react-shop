@@ -12,7 +12,7 @@ COPY . .
 RUN npm run build
 
 # STAGE 2 -> CREATE NGINX SERVER
-FROM nignx:1.23.3-alpine AS prod-stage
+FROM nginx:1.23.3-alpine AS prod-stage
 
 COPY --from=build /react-shop/build /usr/share/nginx/html
 
